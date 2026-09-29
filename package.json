@@ -1,0 +1,27 @@
+{
+  "name": "pargar",
+  "productName": "Pargar",
+  "version": "3.0.0",
+  "description": "پرگار — سازنده‌ی درس ریاضی",
+  "main": "main.js",
+  "author": "Pargar",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable nsis"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "ir.pargar.app",
+    "productName": "Pargar",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "www/**/*"],
+    "compression": "maximum",
+    "win": { "target": ["portable", "nsis"] },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true, "language": "1065" },
+    "portable": { "artifactName": "Pargar-${version}-portable.exe" }
+  }
+}
